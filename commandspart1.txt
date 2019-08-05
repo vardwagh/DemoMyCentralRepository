@@ -1,0 +1,285 @@
+
+stevargh@LIN20001427 MINGW64 ~
+$ cd /d/
+bash: cd: /d/: No such file or directory
+
+stevargh@LIN20001427 MINGW64 ~
+$ cd /c/
+
+stevargh@LIN20001427 MINGW64 /c
+$ mkdir mytmpfolderforgit
+
+stevargh@LIN20001427 MINGW64 /c
+$ cd mytmpfolderforgit
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit
+$ pwd
+/c/mytmpfolderforgit
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit
+$ echo "# mycerntaldemorepo" >> README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit
+$ git init
+Initialized empty Git repository in C:/mytmpfolderforgit/.git/
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ ls
+README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ ls
+README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ ls -la
+total 17
+drwxr-xr-x 1 stevargh 1049089  0 Aug  1 11:02 ./
+drwxr-xr-x 1 stevargh 1049089  0 Aug  1 10:58 ../
+drwxr-xr-x 1 stevargh 1049089  0 Aug  1 11:02 .git/
+-rw-r--r-- 1 stevargh 1049089 20 Aug  1 11:01 README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ cd .git
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit/.git (GIT_DIR!)
+$ ls
+config  description  HEAD  hooks/  info/  objects/  refs/
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit/.git (GIT_DIR!)
+$ ls -la
+total 11
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 ./
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 ../
+-rw-r--r-- 1 stevargh 1049089 130 Aug  1 11:02 config
+-rw-r--r-- 1 stevargh 1049089  73 Aug  1 11:02 description
+-rw-r--r-- 1 stevargh 1049089  23 Aug  1 11:02 HEAD
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 hooks/
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 info/
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 objects/
+drwxr-xr-x 1 stevargh 1049089   0 Aug  1 11:02 refs/
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit/.git (GIT_DIR!)
+$ cat config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit/.git (GIT_DIR!)
+$ cd ..
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ ls
+README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git commit -m "first commit"
+[master (root-commit) a003e66] first commit
+ Committer: Varghese <steffy.varghese@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git log
+commit a003e66882ad5af16693980aebe11b4003f75f13 (HEAD -> master)
+Author: Varghese <steffy.varghese@capgemini.com>
+Date:   Thu Aug 1 11:22:25 2019 +0530
+
+    first commit
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add origin https://github.com/steffy2110/mycerntaldemorepo.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add -m origin https://github.com/steffy2110/mycerntaldemorepo.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote -v
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add --master origin1
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ cd..
+bash: cd..: command not found
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ cd ..
+
+stevargh@LIN20001427 MINGW64 /c
+$ cd ..
+
+stevargh@LIN20001427 MINGW64 /
+$ cd mytmpfolderforgit
+bash: cd: mytmpfolderforgit: No such file or directory
+
+stevargh@LIN20001427 MINGW64 /
+$ ls
+bin/  dev/  git-bash.exe*  LICENSE.txt  NOTICE.txt  ReleaseNotes.html  unins000.dat   unins000.msg
+cmd/  etc/  git-cmd.exe*   mingw64/     proc/       tmp/               unins000.exe*  usr/
+
+stevargh@LIN20001427 MINGW64 /
+$ cd /c/
+
+stevargh@LIN20001427 MINGW64 /c
+$ cd mytmpfolderforgit
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add origin https://github.com/steffy2110/mytmpfolderforgit.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ git remote add -m origin https://github.com/steffy2110/mytmpfolderforgit.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+stevargh@LIN20001427 MINGW64 /c/mytmpfolderforgit (master)
+$ cd ..
+
+stevargh@LIN20001427 MINGW64 /c
+$ git clone https://github.com/steffy2110/mycerntaldemorepo.git
+Cloning into 'mycerntaldemorepo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+stevargh@LIN20001427 MINGW64 /c
+$ cd mycerntaldemorepo
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ ls
+steps.txt
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ vi steps.txt
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ git add steps.txt
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ git commit -m "commiting steps again"
+[master 32c15b5] commiting steps again
+ Committer: Varghese <steffy.varghese@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 7 insertions(+)
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ git remote -v
+origin  https://github.com/steffy2110/mycerntaldemorepo.git (fetch)
+origin  https://github.com/steffy2110/mycerntaldemorepo.git (push)
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 297 bytes | 297.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/steffy2110/mycerntaldemorepo.git
+   462cd6d..32c15b5  master -> master
+
+stevargh@LIN20001427 MINGW64 /c/mycerntaldemorepo (master)
